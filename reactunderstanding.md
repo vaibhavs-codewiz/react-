@@ -38,3 +38,21 @@ JSX Syntax: React introduces JSX, a syntax extension that allows writing HTML-li
 Strong Community and Ecosystem: React has a strong and active community, which means a wealth of third-party libraries, tools, and resources are available to help with development, debugging, testing, and deployment.
 
 In summary, React aims to simplify the process of building dynamic and responsive user interfaces by providing a clear, efficient, and modular approach to UI development.
+# understand how the react is injecting inside the html
+the main idea behind what to install and what to use to run react code is to understand how the react code is injecting in html.
+the prime important file in whole bundle is index.html as it is the only one going to load , and due to this the react applications are called single page application (SPA).
+react is the core library to include.
+and react dom is the implimantation of react on web .
+and react native is the implimantation of react on mobile.
+
+# how element is created using react 
+after importing the required library
+the reference using createRoot method which take where to render the element 
+now apply the render method on reference variable with parameter what to render
+(easy way is use render method of reactdom and pass what to render , where to render ).
+react creates its own dom tree called virtual dom which then match with the actual dom and what are the changes in virtual dom map with actual dom that changes are updated in the actual dom , this is how react works.
+
+* using react we are able to code html in js file and then injecting it using import export , so this improves the capabilities of html and helpful in creatig the complex ui .
+* without applying script in html we are able to inject js in html this is because behind script which is installed do this task of adding scipt in html.(if script is present in json file dependencies.)
+* we should be aware that while creating react component the name of function must be capital and if the component file is returning the html then extendion must be jsx.
+* <></> - fragmentation .
