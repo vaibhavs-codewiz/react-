@@ -1,7 +1,7 @@
 
 * using utility npx create-react-app , is a bulky bundle set and require good internet speed , for creating react project .
 * on creating react project it provide us with some dependencies in json.package
-like react, reacr-dom, web-vitals(used to check performance.)
+like react, react-dom, web-vitals(used to check performance.)
 # react project using vite :-
 Vite (French word for "quick", pronounced /vit/, like "veet") is a build tool that aims to provide a faster and leaner development experience for modern web projects. It consists of two major parts:
 
