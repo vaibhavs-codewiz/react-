@@ -54,5 +54,5 @@ react creates its own dom tree called virtual dom which then match with the actu
 
 * using react we are able to code html in js file and then injecting it using import export , so this improves the capabilities of html and helpful in creatig the complex ui .
 * without applying script in html we are able to inject js in html this is because behind script which is installed do this task of adding scipt in html.(if script is present in json file dependencies.)
-* we should be aware that while creating react component the name of function must be capital and if the component file is returning the html then extendion must be jsx.
+* we should be aware that while creating react component the name of function must be capital and if the component file is returning the html then extension must be jsx.
 * <></> - fragmentation .
