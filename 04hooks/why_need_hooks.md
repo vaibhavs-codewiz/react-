@@ -18,3 +18,4 @@ useState ,method is reponsible for propagating the state change on ui.
 useState return the 2 values in array form , second value is function which give first array value .
 * ex. const [counter, setCounter] = useState(anyvalue);
 now counter is control by setCounter method.
+* useState sync the ui and state.
