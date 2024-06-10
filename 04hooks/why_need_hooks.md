@@ -9,7 +9,7 @@ in command terminal
 
 # need of hooks
 React does not give control to us to control the ui updation ,
-react allow us to uodate the value of variables but when we need to print that value window we need to use the hooks
+react allow us to update the value of variables but when we need to print that value window we need to use the hooks
 hooks are some methods which help to achieve this .
 example : if we wanna display a variable on screen at 5 differnet places whoes value changes , then doing this using js will be tedious as we need to select 5 different element , but hooks rescue as from this situation.
 * hooks are methods which are very modular , there is very specific task is perform by single hook. 
