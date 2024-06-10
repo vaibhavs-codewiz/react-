@@ -19,3 +19,11 @@ useState return the 2 values in array form , second value is function which give
 * ex. const [counter, setCounter] = useState(anyvalue);
 now counter is control by setCounter method.
 * useState sync the ui and state.
+
+# interview question related to counter 
+* if inside the addVale method there are multiple setvalue(counter+1) 4 times than what will happen :
+->counter will not increase by 4 on clicking add counter because , all the set counter are sent in badges and if there is similar kind of work for set counter than by fibre algorithm in react counter increase by 1 only.
+-> to handle this task , setCounter method acccepts a call back in which prev state of button is pass as parameter and than perform operation on that .
+so , by this approach separate badge are created for every call although the tasks are similar .
+this is possible because every call need previous state and which is only achived when only one task perform .
+avoid putting inside the conditionals.
