@@ -29,6 +29,11 @@ On the initial render, useCallback returns the fn function you have passed.
 
 During subsequent renders, it will either return an already stored fn  function from the last render (if the dependencies haven’t changed), or return the fn function you have passed during this render.
 
+# use effect hook
+
+
+# use ref hook
+
 # input tag of HTML 
 * The <input> HTML element is used to create interactive controls for web-based forms in order to accept data from the user.
 * input varies depending on type attribute , the default value of type is text.
