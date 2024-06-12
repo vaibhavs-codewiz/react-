@@ -29,9 +29,16 @@ On the initial render, useCallback returns the fn function you have passed.
 
 During subsequent renders, it will either return an already stored fn  function from the last render (if the dependencies haven’t changed), or return the fn function you have passed during this render.
 
-# use effect hook
+# use effect hook : useEffect is a React Hook that lets you synchronize a component with an external system.
+In React, the useEffect hook is a powerful tool for managing "side effects" within functional components. Side effects are actions that can't be directly included in the component's render function because they might interact with external factors like:
 
+Fetching data from APIs
+Directly manipulating the DOM (Document Object Model)
+Setting up subscriptions or timers
+Adding or removing event listeners
 
+syntax : useEffect(setup, dependencies?) 
+return : it returns undefined
 # use ref hook
 
 # input tag of HTML 
