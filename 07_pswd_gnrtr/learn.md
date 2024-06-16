@@ -41,6 +41,19 @@ syntax : useEffect(setup, dependencies?)
 return : it returns undefined
 # use ref hook
 
+The useRef hook in React serves two main purposes:
+
+Accessing DOM Elements: React is designed with a declarative approach, meaning you describe what you want to render. However, there are situations where you need to directly interact with a DOM element's properties or methods. Here's where useRef comes in.
+
+You can create a ref using useRef(null).
+Assign this ref to the ref attribute of the JSX element you want to target.
+After the component renders, the current property of the ref object will hold a reference to the actual DOM element.
+This allows you to manipulate the element directly using imperative code.
+
+Storing Mutable Values: While state management with useState is ideal for data that triggers re-renders, useRef is useful for values that don't necessarily cause re-renders but need to persist across them.
+
+This could be a variable that tracks a previous value or an ongoing animation state.
+The ref object created by useRef persists between re-renders, and you can update its .current property to store the new value.
 # input tag of HTML 
 * The <input> HTML element is used to create interactive controls for web-based forms in order to accept data from the user.
 * input varies depending on type attribute , the default value of type is text.
