@@ -1,53 +1,67 @@
 import { useState, useCallback, useEffect, useRef } from "react";
 
-function App(){
-let [length,setLength] = useState(8);
-let [password,setPassword] = useState("");
-let [charAllowed,setCharAllowed] = useState(false);
-let [numberAllowed,setNumberAllowed] = useState(false);
+function App() {
+  let [length, setLength] = useState(8);
+  let [password, setPassword] = useState("");
+  let [charAllowed, setCharAllowed] = useState(false);
+  let [numberAllowed, setNumberAllowed] = useState(false);
 
-const passwordGenerator = useCallback(() => {
-  let pass = "";
-  let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-  if (charAllowed) {str += "!#$%&()*+,-./:<=>[]^_`?@"};
-  if (numberAllowed) {str += "0123456789"};
-  for(let i = 1; i<length; i++)
-    {
-      let char = Math.floor(Math.random()*str.length + 1);
+  //use call back hook used for optimize(memoize)
+  const passwordGenerator = useCallback(() => {
+    let pass = "";
+    let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    if (charAllowed) {
+      str += "!#$%&()*+,-./:<=>[]^_`?@";
+    }
+    if (numberAllowed) {
+      str += "0123456789";
+    }
+    for (let i = 1; i < length; i++) {
+      let char = Math.floor(Math.random() * str.length + 1);
       pass += str.charAt(char);
     }
     setPassword(pass);
-},[length,charAllowed,numberAllowed,setPassword]);
-useEffect(() => {
-  passwordGenerator();
-}, [length, charAllowed, numberAllowed, setPassword]);
+  }, [length, charAllowed, numberAllowed, setPassword]);
 
+  //use effect used for executing function whenever change in dependencies.
+  useEffect(() => {
+    passwordGenerator();
+  }, [length, charAllowed, numberAllowed, setPassword]);
+  //in use effect we used the dependency setpassword method because of use password it
+  //will execute method everytime as password changes everytime.
+  let passwordRef = useRef("ijnnvrwf");
+  let copyPasswordToClipboard = useCallback(() => {
+    passwordRef.current?.select();
+    passwordRef.current?.setSelectionRange(0, 99);
+    window.navigator.clipboard.writeText(password);
+    console.log("copied");
+  }, [password]);
 
-// function App() {
-//   const [length, setLength] = useState(8);
-//   const [numberAllowed, setNumberAllowed] = useState(false);
-//   const [charAllowed, setCharAllowed] = useState(false);
-//   const [password, setPassword] = useState("");
+  // function App() {
+  //   const [length, setLength] = useState(8);
+  //   const [numberAllowed, setNumberAllowed] = useState(false);
+  //   const [charAllowed, setCharAllowed] = useState(false);
+  //   const [password, setPassword] = useState("");
 
-//   //useRef hook
-//   //const passwordRef = useRef(null);
+  //   //useRef hook
+  //   //const passwordRef = useRef(null);
 
-//   const passwordGenerator = useCallback(() => {
-//     let pass = "";
-//     let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-//     if (numberAllowed) str += "0123456789";
-//     if (charAllowed) str += "!@#$%^&*-_+=[]{}~`";
+  //   const passwordGenerator = useCallback(() => {
+  //     let pass = "";
+  //     let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+  //     if (numberAllowed) str += "0123456789";
+  //     if (charAllowed) str += "!@#$%^&*-_+=[]{}~`";
 
-//     for (let i = 1; i <= length; i++) {
-//       let char = Math.floor(Math.random() * str.length + 1);
-//       pass += str.charAt(char);
-//     }
+  //     for (let i = 1; i <= length; i++) {
+  //       let char = Math.floor(Math.random() * str.length + 1);
+  //       pass += str.charAt(char);
+  //     }
 
-//     setPassword(pass);
-//   }, [length, numberAllowed, charAllowed, setPassword]);
+  //     setPassword(pass);
+  //   }, [length, numberAllowed, charAllowed, setPassword]);
 
-//   useEffect(() =>{ passwordGenerator()}, 
-//   [length,numberAllowed,charAllowed,setPassword]);
+  //   useEffect(() =>{ passwordGenerator()},
+  //   [length,numberAllowed,charAllowed,setPassword]);
 
   return (
     <div className="w-full max-w-md mx-auto shadow-md rounded-lg px-4 py-3 my-8 bg-gray-800 text-orange-500">
@@ -59,10 +73,10 @@ useEffect(() => {
           className="outline-none w-full py-1 px-3"
           placeholder="Password"
           readOnly
-         // ref={passwordRef}
+          ref={passwordRef}
         />
         <button
-         // onClick={copyPasswordToClipboard}
+          onClick={copyPasswordToClipboard}
           className="outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0"
         >
           copy

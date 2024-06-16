@@ -46,3 +46,6 @@ return : it returns undefined
 * input varies depending on type attribute , the default value of type is text.
 * input shows up the value of value attribute.
 * attributes of input tag : The <input> element is so powerful because of its attributes; the type attribute, described with examples above, being the most important. Since every <input> element, regardless of type, is based on the HTMLInputElement interface, they technically share the exact same set of attributes. However, in reality, most attributes have an effect on only a specific subset of input types. In addition, the way some attributes impact an input depends on the input type, impacting different input types in different ways.
+
+in core react the code goes into js file and execute on browser so we can use the window object as it is available in browser.
+but in nextjs there happens server-side rendering and hence window object not available .
