@@ -1,15 +1,18 @@
 import { useState } from "react";
-import Input from "../component/Input"
+import useCurrencyInfo from "./hook/useCurrencyInfo";
+import InputBox from "../component/InputBox";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [from, setFrom] = useState("usd");
+
+  // let currencyInfo = useCurrencyInfo(from);
+  // let option = Object.keys(currencyInfo);
+  // console.log(option);
 
   return (
     <>
-      <div className="bg-gray-800">idc</div>
-      <div className="text-orange-800">jomo is fine</div>
-      <div>ee</div>
-      <Input />
+      <InputBox 
+      />
     </>
   );
 }
