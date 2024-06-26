@@ -1,7 +1,5 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import Input from "../component/Input"
 
 function App() {
   const [count, setCount] = useState(0);
@@ -9,8 +7,9 @@ function App() {
   return (
     <>
       <div className="bg-gray-800">idc</div>
-      <div className="text-orange-800">ekj</div>
+      <div className="text-orange-800">jomo is fine</div>
       <div>ee</div>
+      <Input />
     </>
   );
 }

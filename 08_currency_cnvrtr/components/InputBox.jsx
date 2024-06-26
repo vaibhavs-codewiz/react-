@@ -3,11 +3,11 @@ function InputBox({
   label,
   amount,
   onAmountChange,
+  selectCurrency = "usd",
   onCurrencyChange,
   currencyOptions = [],
-  selectCurrency = "usd",
-  amountDisable = false,
-  currencyDisable = false,
+  //amountDisable = false,
+  //currencyDisable = false,
   className = "",
 }) {
   const amountInputId = useId();
@@ -26,7 +26,7 @@ function InputBox({
           className="outline-none w-full bg-transparent py-1.5"
           type="number"
           placeholder="Amount"
-          disabled={amountDisable}
+          //disabled={amountDisable}
           value={amount}
           onChange={(e) =>
             onAmountChange && onAmountChange(Number(e.target.value))
@@ -46,6 +46,7 @@ function InputBox({
               {currency}
             </option>
           ))}
+          {/* remember the key in loop in react */}
         </select>
       </div>
     </div>
