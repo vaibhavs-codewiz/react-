@@ -1,10 +1,10 @@
 # react app begin:
-we are using the vs cide editor other options sublime, vim .
+we are using the vs code editor other options sublime, vim .
 and using nodejs to execute the code .
 at first we create repository in github and run all the commands git init commit...
-so that we can track or react up using github.
+so that we can track or react app using github.
 then we can create react app using different frameworks
-start new project : option 1 is using custom , option2 utility create-react-app (high bundeler size) , option3 utility vite faster and create smaller bundeler size
+start new project : option 1 is using custom , option2 utility create-react-app (high bundeler size) , option3 utility vite faster and create small bundeler size
 option4 react meta framework nextjs, gatsby, remix.
 
 in create-react-app there are node modules available with it 
@@ -116,3 +116,7 @@ whatever the app you are building the core working is that js code will get insi
 public folder contains the index.html file which contain the root tag which will contain all the js react code . due to single index html file it is also called as the single page application.
 index.html file does not contain any script tag then how js get injected ?
 so this is done by scripts present in package.json file this happen behind the scenes. this all happen in create react app but vite have inbuilt script tag in html file.
+in vite the name of components should have jsx extension due to its internal configuration but in create-react-app js or jsx can use any .
+also in vite the name of component and its function should be capitalized.(in all framework)
+also in jsx during return we are allowed to return only single fragement and not multiple fragements.
+in vite the script tag is receiving methods from its dependencies(package.json) which are react and react dom.
