@@ -1,0 +1,1 @@
+* we are using useContext hook to extract out the variable and values from the imported file or component .
